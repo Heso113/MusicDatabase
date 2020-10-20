@@ -41,4 +41,92 @@ public class SearchObjectRepository {
         }
         return tracks;
     }
+
+    public ArrayList<SearchObject> getAllUniqueArtists() {
+        ArrayList<SearchObject> artists = new ArrayList<SearchObject>();
+        try {
+            connection = DriverManager.getConnection(url);
+            PreparedStatement prepState = connection.prepareStatement("SELECT DISTINCT Name FROM Artist");
+            ResultSet set = prepState.executeQuery();
+            while (set.next()) {
+                artists.add(new SearchObject(
+                    "",
+                    set.getString("Name"),
+                    "",
+                    ""
+                ));
+            }
+            System.out.println("Fetched all artists.");
+
+        } catch (Exception e) {
+            System.out.println("getAllArtists method failed.");
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("Failed to close connection to Chinnok in getAllTracksFromSearch method.");
+            }
+        }
+        return artists;
+    }
+
+    public ArrayList<SearchObject> getAllUniqueGenres() {
+        ArrayList<SearchObject> genres = new ArrayList<SearchObject>();
+        try {
+            connection = DriverManager.getConnection(url);
+            PreparedStatement prepState = connection.prepareStatement("SELECT DISTINCT Name FROM Genre");
+            ResultSet set = prepState.executeQuery();
+            while (set.next()) {
+                genres.add(new SearchObject(
+                    "",
+                    "",
+                    "",
+                    set.getString("Name")
+                ));
+            }
+            System.out.println("Fetched all genres.");
+
+        } catch (Exception e) {
+            System.out.println("getAllGenres method failed.");
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("Failed to close connection to Chinnok in getAllTracksFromSearch method.");
+            }
+        }
+        return genres;
+    }
+
+    public ArrayList<SearchObject> getAllTracks() {
+        ArrayList<SearchObject> tracks = new ArrayList<SearchObject>();
+        try {
+            connection = DriverManager.getConnection(url);
+            PreparedStatement prepState = connection.prepareStatement("SELECT Name FROM Track");
+            ResultSet set = prepState.executeQuery();
+            while (set.next()) {
+                tracks.add(new SearchObject(
+                    set.getString("Name"),
+                    "",
+                    "",
+                    ""
+                ));
+            }
+            System.out.println("Fetched all tracks.");
+
+        } catch (Exception e) {
+            System.out.println("getAllTracks method failed.");
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                System.out.println("Failed to close connection to Chinnok in getAllTracksFromSearch method.");
+            }
+        }
+        return tracks;
+    }
+    
 }
