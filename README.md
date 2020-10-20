@@ -30,6 +30,18 @@ For this application a couple of endpoints was exposed which can be tested with 
 ## api/fetch/customer/favoritegenre/{id}
  - Fetch the favorite genre of a given customer
 
+## /api/fetch/tracksfromsearch/
+ - Fetches each track that contain the given search phrase in its name
+
+## /api/fetch/artists/
+ - Fetches the name of each artist in the database
+ 
+## /api/fetch/genres/
+ - Fetches the name of each genre in the database
+ 
+## /api/fetch/tracks/
+ - Fetches the name of each track in the database
+
 
 # Goals with this application
  - Expose endpoints with Spring
