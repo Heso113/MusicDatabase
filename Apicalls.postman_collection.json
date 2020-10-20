@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "4d469cde-52bd-47f2-ade7-3df0d99a56fc",
+		"name": "Apicalls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/fetch/customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/fetch/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetch",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/fetch/countrystats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/fetch/countrystats",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetch",
+						"countrystats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/update/customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"customerId\": 68,\r\n        \"firstName\": \"iiiiiiiiiiiii\",\r\n        \"lastName\": \"pppppppppppp\",\r\n        \"company\": \"hejAB\",\r\n        \"address\": \"Vallviksvagen\",\r\n        \"city\": \"São José dos Campos\",\r\n        \"state\": \"SP\",\r\n        \"country\": \"Brazil\",\r\n        \"postalCode\": \"12227-000\",\r\n        \"phoneNumber\": \"\",\r\n        \"fax\": \"\",\r\n        \"email\": \"\",\r\n        \"supportRepId\": 889\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/update/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"update",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/fetch/customer/favoritegenre/12",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/fetch/customer/favoritegenre/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetch",
+						"customer",
+						"favoritegenre",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/create/customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"customerId\": 69,\r\n        \"firstName\": \"hampus\",\r\n        \"lastName\": \"olsson\",\r\n        \"company\": \"Embraer - Empresa Brasileira de Aeronáutica S.A.\",\r\n        \"address\": \"Vallviksvagen\",\r\n        \"city\": \"São José dos Campos\",\r\n        \"state\": \"SP\",\r\n        \"country\": \"Brazil\",\r\n        \"postalCode\": \"12227-000\",\r\n        \"phoneNumber\": \"\",\r\n        \"fax\": \"\",\r\n        \"email\": \"\",\r\n        \"supportRepId\": 890\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/create/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/fetch/customers/invoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/fetch/customers/invoice",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fetch",
+						"customers",
+						"invoice"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
