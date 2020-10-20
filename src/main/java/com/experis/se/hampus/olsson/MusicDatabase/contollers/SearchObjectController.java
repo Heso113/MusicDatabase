@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import com.experis.se.hampus.olsson.MusicDatabase.data_access.SearchObjectRepository;
 import com.experis.se.hampus.olsson.MusicDatabase.models.SearchObject;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +17,7 @@ public class SearchObjectController {
 
     //Set endpoints
     @RequestMapping(value = "/api/search/", method = RequestMethod.GET)
-    public ArrayList<SearchObject> getAllTracksFromSearch(@RequestParam("search") String search, Model model) {
+    public ArrayList<SearchObject> getAllTracksFromSearch(@RequestParam("search") String search) {
         return searchRepo.getAllTracksFromSearch(search);
     } 
 
