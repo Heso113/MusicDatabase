@@ -4,35 +4,28 @@ public class Customer {
     private int customerId;
     private String firstName;
     private String lastName;
-    private String company;
-    private String address;
-    private String city;
-    private String state;
     private String country;
     private String postalCode;
     private String phoneNumber;
-    private String fax;
-    private String email;
     private int supportRepId;
+    private int numbersOfCustomersFromCountry;
+    private String favoriteGenre;
+   
+
+    
 
     public Customer() {
 
     }
 
-    public Customer(int customerId, String firstName, String lastName, String company, String address, String city, String state,
-                    String country, String postalCode, String phoneNumber, String fax, String email, int supportRedId) {
+    public Customer(int customerId, String firstName, String lastName, 
+                    String country, String postalCode, String phoneNumber, int supportRedId) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.company = company;
-        this.address = address;
-        this.city = city;
-        this.state = state;
         this.country = country;
         this.postalCode = postalCode;
         this.phoneNumber = phoneNumber;
-        this.fax = fax;
-        this.email = email;
         this.supportRepId = supportRedId;
     }
 
@@ -41,8 +34,20 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+    public Customer(String country, int numbersOfCustomersFromCountry) {
+        this.country = country;
+        this.numbersOfCustomersFromCountry = numbersOfCustomersFromCountry;
+    
+    }
+    public Customer(int customerId, String firstName, String lastName, String favoriteGenre) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.favoriteGenre = favoriteGenre;
+    }
+  
 
-    public int getCustomerId() {
+	public int getCustomerId() {
         return customerId;
     }
 
@@ -64,38 +69,6 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public String getCountry() {
@@ -122,22 +95,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public int getSupportRepId() {
         return supportRepId;
     }
@@ -145,4 +102,19 @@ public class Customer {
     public void setSupportRepId(int supportRepId) {
         this.supportRepId = supportRepId;
     }    
+    public int getNumbersOfCustomersFromCountry() {
+        return numbersOfCustomersFromCountry;
+    }
+
+    public void setNumbersOfCustomersFromCountry(int numbersOfCustomersFromCountry) {
+        this.numbersOfCustomersFromCountry = numbersOfCustomersFromCountry;
+}
+
+public String getFavoriteGenre() {
+    return favoriteGenre;
+}
+
+public void setFavoriteGenre(String favoriteGenre) {
+    this.favoriteGenre = favoriteGenre;
+}
 }
