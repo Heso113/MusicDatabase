@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+    <header> 
+        <!--Header content-->
+        <h1>Search</h1>
+    </header>
+    <nav>
+        <!--Navigation content-->
+        <a href="http://localhost:8080/home"><button class="button button1">Back</button></a>
+    </nav>
+    <main>
+        <!--Main website content-->
+        <h1 th:text="${greeting}"></h1>
+        <table style="width:100%">
+        <tr>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Track</th>
+            <th>Genre</th>
+        </tr>
+        <div th:each="track: ${tracks}">
+            
+            <tr>
+                <td><span th:text="${track.getArtistName()}" ></span></td>
+                <td><span th:text="${track.getAlbumName()}"></span></td>
+                <td><span th:text="${track.getTrackName()}"></span></td>
+                <td><span th:text="${track.getGenre()}"></span></td>
+            </tr>
+        </div>
+    </table>
+
+        
+    </main>
+    <footer>
+        <!--Footer content-->
+        <h3>Created by Christopher Berglund and Hampus Olsson</h3>
+    </footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+    <header> 
+        <!--Header content-->
+        <h1>Home</h1>
+    </header>
+    <main>
+        <!--Main website content-->
+        
+        <form action="/search" method = "GET" target="_self">
+            <label for="search">Search for tracks: </label>
+            <input type ="text" id="search" name="search" placeholder="Enter a seach phrase...">
+            <input type="submit" value = "Submit">
+        </form>
+        
+        <h2 th:text="${greeting}"></h2>
+        <table style="width:50%">
+            <tr>
+                <th>Artist</th>
+            </tr>
+            <div th:each="suggestion: ${suggestions}">
+                
+                <tr>
+                    <td><span th:text="${suggestion.getArtistName()}" ></span></td>
+                </tr>
+            </div>
+        </table>
+        <br>
+        <br>
+
+        <table style="width:50%">
+            <tr>
+                <th>Track</th>
+            </tr>
+            <div th:each="suggestion: ${suggestions}">
+                
+                <tr>
+                    <td><span th:text="${suggestion.getTrackName()}"></span></td>
+                </tr>
+            </div>
+        </table>
+        <br>
+        <br>
+
+        <table style="width:50%">
+            <tr>
+                <th>Genre</th>
+            </tr>
+            <div th:each="suggestion: ${suggestions}">
+                
+                <tr>
+                    <td><span th:text="${suggestion.getGenre()}"></span></td>
+                </tr>
+            </div>
+        </table>
+
+        
+        
+        
+    </main>
+    <footer>
+        <h3>Created by Christopher Berglund and Hampus Olsson</h3>
+    </footer>
+    </form>
+</body>
+</html>
