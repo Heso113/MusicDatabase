@@ -29,11 +29,13 @@ h1 {
 }
 
 table {
-    border: 1px solid black;
+    border: 2px solid black;
+    background-color: black;
 }
 
 th {
     border: 1px solid black;
+    background-color: #632c1e;
     font-weight: bold;
     font-size: large;
 }
@@ -41,6 +43,7 @@ th {
 td {
     border: 1px solid black;
     text-align: center;
+    background-color: #8e4d2d;
 }
 
 

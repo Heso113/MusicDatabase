@@ -1,7 +1,6 @@
 package com.experis.se.hampus.olsson.MusicDatabase.contollers;
 import com.experis.se.hampus.olsson.MusicDatabase.models.SearchObject;
 
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class UserController {
+public class WebsiteController {
     SearchObjectController soc = new SearchObjectController();
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(Model model) {
@@ -33,15 +32,13 @@ public class UserController {
                     ));
         }
         model.addAttribute("suggestions", set);
-        
-
         return "home"; 
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String getAllTracksFromSearch(@RequestParam("search") String search, Model model) {
         if (search.length() > 0) {
-            ArrayList<SearchObject> tracks = soc.getAllTracksFromSearch(search, model);
+            ArrayList<SearchObject> tracks = soc.getAllTracksFromSearch(search);
             model.addAttribute("tracks", tracks);
         }
         else {
